@@ -76,24 +76,24 @@ export default function DiscoverPage() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A4D]/90 via-[#24145A]/90 to-[#2F0F66]/90" />
         
-        <div className="relative z-10 text-center px-8 max-w-5xl mt-20">
-          <h1 className="font-['Outfit'] font-bold text-6xl md:text-7xl text-white mb-6">
+        <div className="relative z-10 text-center px-4 sm:px-8 max-w-5xl mt-20">
+          <h1 className="font-['Outfit'] font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 sm:mb-6 leading-tight">
             Discover New Creation International Church
           </h1>
-          <p className="font-['Outfit'] text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="font-['Outfit'] text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto">
             Learn about our vision, beliefs, and the journey God has taken us on as a church community.
           </p>
           
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center">
             <Button
               onClick={() => scrollToSection('vision')}
-              className="bg-white text-[#6D28D9] hover:bg-gray-100 font-['Outfit'] font-semibold px-8 py-6 text-lg rounded-md"
+              className="bg-white text-[#6D28D9] hover:bg-gray-100 font-['Outfit'] font-semibold px-5 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg rounded-md"
             >
               Our Vision
             </Button>
             <Button
               onClick={() => scrollToSection('doctrine')}
-              className="border-2 border-white text-white hover:bg-white hover:text-[#6D28D9] font-['Outfit'] font-semibold px-8 py-6 text-lg bg-transparent rounded-md"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#6D28D9] font-['Outfit'] font-semibold px-5 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg bg-transparent rounded-md"
             >
               Our Doctrine
             </Button>
