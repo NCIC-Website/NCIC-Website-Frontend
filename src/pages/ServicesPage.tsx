@@ -68,15 +68,6 @@ const allServices = [
     description: "High-energy worship and activities for young people to grow in faith.",
     location: "Riche Compound"
   },
-  { 
-    num: 9, 
-    day: "Saturday", 
-    title: "Join Foundation Class", 
-    time: "Afternoon: 02:00PM - 04:00PM", 
-    note: "(Bring your Bible and notebook)",
-    description: "Start your journey in understanding the foundations of Christian faith.",
-    location: "Riche Compound"
-  }
 ];
 
 export default function ServicesPage() {

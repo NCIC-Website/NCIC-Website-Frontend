@@ -306,7 +306,7 @@ export default function DiscoverPage() {
                   Baptism Services
                 </p>
                 <p className="font-['Outfit'] text-gray-600">
-                  450+ Baptized Members
+                  900+ Baptized Members
                 </p>
               </CardContent>
             </Card>
@@ -318,7 +318,7 @@ export default function DiscoverPage() {
                   <GraduationCap className="w-8 h-8 text-[#6D28D9]" />
                 </div>
                 <h3 className="font-['Outfit'] font-bold text-5xl text-[#6D28D9] mb-2">
-                  18
+                  18+
                 </h3>
                 <p className="font-['Outfit'] text-xl font-semibold text-gray-900 mb-2">
                   Foundation Classes
@@ -420,83 +420,7 @@ export default function DiscoverPage() {
               </Card>
             </div>
 
-            {/* What You'll Learn Section */}
-            <div className="bg-gradient-to-br from-[#6D28D9]/5 to-purple-100/30 rounded-2xl p-8 md:p-12 mb-12">
-              <h3 className="font-['Outfit'] font-bold text-3xl text-gray-900 mb-8 text-center">
-                What You'll Learn
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Submission and Obedience</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Word of God</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Who is Man</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Righteousness</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Grace</p>
-                  </div>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all border-l-4 border-[#6D28D9]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#6D28D9] rounded-full"></div>
-                    <p className="font-['Outfit'] font-semibold text-lg text-gray-900">Prayer and Fasting</p>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-r from-[#6D28D9] to-purple-700 rounded-lg p-6 shadow-md md:col-span-2 text-center">
-                  <p className="font-['Outfit'] font-bold text-xl text-white">And Many More Topics</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Duration and CTA */}
-            <div className="text-center">
-              <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-[#6D28D9]/20 mb-8 inline-block">
-                <div className="flex items-center gap-4 justify-center mb-4">
-                  <Calendar className="w-8 h-8 text-[#6D28D9]" />
-                  <div className="text-left">
-                    <p className="font-['Outfit'] text-sm text-gray-600">Duration</p>
-                    <p className="font-['Outfit'] font-bold text-2xl text-gray-900">4 Months Minimum</p>
-                  </div>
-                </div>
-                <p className="font-['Outfit'] text-gray-600">Each class takes a minimum of 4 months to complete</p>
-              </div>
-
-              <div>
-                <Button 
-                  onClick={() => setShowFoundationForm(true)}
-                  className="bg-[#6D28D9] hover:bg-purple-800 text-white font-['Outfit'] font-semibold px-12 py-6 text-xl rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-                >
-                  Enroll in Foundation Class
-                </Button>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

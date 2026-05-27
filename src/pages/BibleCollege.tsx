@@ -4,65 +4,60 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { GraduationCap, Globe, BookOpen, Award, Users, FileText, IdCard, Image as ImageIcon, CreditCard, X } from "lucide-react";
+import { GraduationCap, Globe, BookOpen, Award, Users, FileText, IdCard, Image as ImageIcon, CreditCard, X, CheckCircle } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { submitBibleCollegeApplication } from "@/api/bibleCollege";
 import abc2 from "@/assets/abc2.jpg";
 import abc8 from "@/assets/abc8.jpg";
 import apostle from "@/assets/apostle1.jpg";
 import abclogo from "@/assets/abclogo.png";
 import icibc from "@/assets/icibc5.webp";
 
+const emptyForm = () => ({
+  fullName: "", email: "", phone: "", dateOfBirth: "", gender: "",
+  educationLevel: "", programInterest: "", learningMode: "",
+  churchName: "", address: "", additionalInfo: ""
+});
+
 export default function BibleCollege() {
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    dateOfBirth: "",
-    gender: "",
-    educationLevel: "",
-    programInterest: "",
-    learningMode: "",
-    churchName: "",
-    address: "",
-    additionalInfo: ""
-  });
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState(emptyForm());
 
   useEffect(() => {
-    const handleOpenForm = () => {
-      setShowRegistrationForm(true);
-    };
-
+    const handleOpenForm = () => { setShowRegistrationForm(true); setSubmitted(false); };
     window.addEventListener('openBibleCollegeForm', handleOpenForm);
     return () => window.removeEventListener('openBibleCollegeForm', handleOpenForm);
   }, []);
 
+  const applicationMutation = useMutation({
+    mutationFn: () => submitBibleCollegeApplication({
+      full_name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      date_of_birth: formData.dateOfBirth,
+      gender: formData.gender,
+      education_level: formData.educationLevel,
+      program_interest: formData.programInterest,
+      learning_mode: formData.learningMode,
+      church_name: formData.churchName || undefined,
+      address: formData.address,
+      additional_info: formData.additionalInfo || undefined,
+    }),
+    onSuccess: () => {
+      setSubmitted(true);
+      setFormData(emptyForm());
+    },
+  });
+
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (will be connected to backend later)
-    console.log("Registration submitted:", formData);
-    alert("Thank you for your interest! Our ABC staff will reach out to you soon with further details.");
-    setShowRegistrationForm(false);
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      dateOfBirth: "",
-      gender: "",
-      educationLevel: "",
-      programInterest: "",
-      learningMode: "",
-      churchName: "",
-      address: "",
-      additionalInfo: ""
-    });
+    applicationMutation.mutate();
   };
 
   const scrollToContact = () => {
@@ -746,6 +741,19 @@ export default function BibleCollege() {
               <strong>Note:</strong> This is not an official registration. After submitting this form, our ABC staff will reach out to you with further enrollment details.
             </p>
 
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                <CheckCircle className="w-20 h-20 text-green-500" />
+                <h3 className="font-['Outfit'] font-bold text-2xl text-gray-900">Application Submitted!</h3>
+                <p className="font-['Outfit'] text-gray-600 max-w-sm">
+                  Thank you for your interest in Applied Bible College. Our ABC staff will reach out to you soon with further enrollment details.
+                </p>
+                <Button onClick={() => { setShowRegistrationForm(false); setSubmitted(false); }}
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-['Outfit'] font-semibold px-8 py-3 mt-2">
+                  Close
+                </Button>
+              </div>
+            ) : (
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -941,11 +949,16 @@ export default function BibleCollege() {
 
               <Button 
                 type="submit"
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-['Outfit'] font-semibold py-3"
+                disabled={applicationMutation.isPending}
+                className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-['Outfit'] font-semibold py-3"
               >
-                Submit Application
+                {applicationMutation.isPending ? "Submitting..." : "Submit Application"}
               </Button>
+              {applicationMutation.isError && (
+                <p className="text-sm text-red-500 text-center">Failed to submit. Please try again.</p>
+              )}
             </form>
+            )}
           </div>
         </div>
       )}

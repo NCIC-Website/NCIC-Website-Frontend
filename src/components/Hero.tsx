@@ -23,32 +23,32 @@ export function Hero() {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mt-20">
-        <h1 className="font-outfit font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[95px] leading-[1.1] tracking-tight text-white text-center mb-8 animate-fade-up drop-shadow-2xl">
+        <h1 className="font-outfit font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[95px] leading-[1.1] tracking-tight text-white text-center mb-6 md:mb-8 animate-fade-up drop-shadow-2xl">
           New Creation International Church Ethiopia
         </h1>
         
         {/* Animated Verse */}
-        <div className="mx-auto mb-12 max-w-3xl opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-          <p className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed font-light tracking-wide italic">
+        <div className="mx-auto mb-8 md:mb-12 max-w-3xl opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 leading-relaxed font-light tracking-wide italic px-2">
             Therefore if any man be in <span className="font-semibold">Christ</span>, he is a <span className="font-semibold">New Creature</span>: old things are passed away; behold, <span className="font-semibold">all things are become new</span>.
           </p>
-          <p className="text-sm text-white/70 mt-4 font-light tracking-widest uppercase">
+          <p className="text-xs sm:text-sm text-white/70 mt-3 md:mt-4 font-light tracking-widest uppercase">
             2 Corinthians 5:17
           </p>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12 opacity-0 animate-fade-up" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center mt-8 md:mt-12 opacity-0 animate-fade-up px-4" style={{ animationDelay: '0.9s', animationFillMode: 'forwards' }}>
           <Button 
             size="lg" 
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-white/90 bg-white text-primary font-outfit font-semibold px-12 py-7 text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl tracking-wide cursor-pointer"
+            className="w-full sm:w-auto border-2 border-white/90 bg-white text-primary font-outfit font-semibold px-8 md:px-12 py-5 md:py-7 text-base md:text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:scale-105 hover:shadow-2xl tracking-wide cursor-pointer"
           >
             Plan Your Visit
           </Button>
           <Button 
             size="lg"
             onClick={() => document.getElementById('teachings')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-2 border-white/90 bg-transparent text-white font-outfit font-semibold px-12 py-7 text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:scale-105 tracking-wide cursor-pointer"
+            className="w-full sm:w-auto border-2 border-white/90 bg-transparent text-white font-outfit font-semibold px-8 md:px-12 py-5 md:py-7 text-base md:text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:scale-105 tracking-wide cursor-pointer"
           >
             Watch Teaching
           </Button>
