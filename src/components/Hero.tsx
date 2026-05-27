@@ -23,7 +23,7 @@ export function Hero() {
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mt-20">
-        <h1 className="font-outfit font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[95px] leading-[1.1] tracking-tight text-white text-center mb-6 md:mb-8 animate-fade-up drop-shadow-2xl">
+        <h1 className="font-outfit font-bold text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[95px] leading-[1.1] tracking-tight text-white text-center mb-6 md:mb-8 animate-fade-up drop-shadow-2xl">
           New Creation International Church Ethiopia
         </h1>
         
