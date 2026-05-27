@@ -114,10 +114,11 @@ export function Departments() {
       <div className="relative z-10 flex flex-col items-center justify-center px-4 md:px-0 mt-6 md:mt-0 md:ml-[1150px] md:-mt-28">
         {/* Text Layer */}
         <h1 className="relative z-10 font-['Outfit'] font-bold text-4xl sm:text-5xl md:text-7xl lg:text-[120px] text-black text-center md:text-left md:-ml-[420px] tracking-tight">
-          <span className="text-white">Minis</span>tries
+          <span className="relative inline-block">
+            <span className="relative z-10 text-white">Minis</span>
+            <span className="absolute inset-0 bg-[#6D28D9] -z-10 scale-x-110 scale-y-110" />
+          </span>tries
         </h1>
-
-        <div className="absolute bottom-[10px] w-[150px] sm:w-[180px] md:w-[300px] h-[40px] sm:h-[60px] md:h-[100px] bg-[#6D28D9] md:-ml-[680px] -z-10 mb-[15px] sm:mb-[20px] md:mb-[36px]" />
       </div>
 
       <div ref={sectionRef} className="relative overflow-hidden mt-8 md:mt-12 mb-12 md:mb-16">

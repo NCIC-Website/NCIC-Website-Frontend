@@ -52,7 +52,7 @@ export function Contact() {
             Contact Us
           </h1>
 
-      <div className="absolute bottom-[10px] w-[200px] sm:w-[400px] md:w-[600px] lg:w-[800px] h-[30px] sm:h-[50px] md:h-[73px] bg-[#6D28D9] -z-10" />
+      <div className="absolute bottom-0 left-0 right-0 w-full h-[30px] sm:h-[50px] md:h-[73px] bg-[#6D28D9] -z-10" />
       
        </div>
 
