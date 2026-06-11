@@ -21,6 +21,9 @@ const CATEGORIES = ["General", "Faith", "Prayer", "Healing", "Identity in Christ
 const emptyTeaching = () => ({ title: "", speaker: "", youtube_url: "", category: "General", thumbnail_url: "" });
 const emptySeries = () => ({ title: "", description: "", playlist_url: "", video_count: "" });
 
+type TeachingForm = ReturnType<typeof emptyTeaching>;
+type SeriesForm = ReturnType<typeof emptySeries>;
+
 function getYoutubeId(u: string) {
   const m = u.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
   return m ? m[1] : u;
@@ -28,6 +31,47 @@ function getYoutubeId(u: string) {
 function getPlaylistId(u: string) {
   const m = u.match(/[?&]list=([\w-]+)/);
   return m ? m[1] : u;
+}
+
+const inputCls = "w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400";
+const labelCls = "text-xs font-semibold text-gray-600 mb-1 block";
+
+function TeachingFormFields({ form, setT }: {
+  form: TeachingForm;
+  setT: (f: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div><label className={labelCls}>Title *</label><input type="text" required value={form.title} onChange={setT("title")} placeholder="e.g. Take the shield of faith" className={inputCls} /></div>
+      <div><label className={labelCls}>Speaker *</label><input type="text" required value={form.speaker} onChange={setT("speaker")} placeholder="e.g. Apostle Bisrat Bezuayene" className={inputCls} /></div>
+      <div><label className={labelCls}>YouTube URL *</label><input type="text" required value={form.youtube_url} onChange={setT("youtube_url")} placeholder="https://www.youtube.com/watch?v=..." className={inputCls} /></div>
+      <div><label className={labelCls}>Category *</label><select required value={form.category} onChange={setT("category")} className={inputCls}>{CATEGORIES.map(c => <option key={c}>{c}</option>)}</select></div>
+      <div className="md:col-span-2"><label className={labelCls}>Thumbnail URL <span className="text-gray-400">(optional)</span></label><input type="text" value={form.thumbnail_url} onChange={setT("thumbnail_url")} placeholder="Leave blank to use YouTube thumbnail" className={inputCls} /></div>
+      {form.youtube_url && (
+        <div className="md:col-span-2">
+          <p className="text-xs text-gray-500 mb-1">Thumbnail preview:</p>
+          <img src={`https://img.youtube.com/vi/${getYoutubeId(form.youtube_url)}/maxresdefault.jpg`} alt="preview" className="h-24 rounded-lg object-cover" onError={e => { (e.target as HTMLImageElement).style.display = "none"; }} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SeriesFormFields({ form, setS }: {
+  form: SeriesForm;
+  setS: (f: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="md:col-span-2"><label className={labelCls}>Series Title *</label><input type="text" required value={form.title} onChange={setS("title")} placeholder="e.g. Spirit of faith / የእምነት መንፈስ" className={inputCls} /></div>
+      <div className="md:col-span-2"><label className={labelCls}>YouTube Playlist URL *</label><input type="text" required value={form.playlist_url} onChange={setS("playlist_url")} placeholder="https://www.youtube.com/playlist?list=PL..." className={inputCls} /><p className="text-xs text-gray-400 mt-1">Paste the full YouTube playlist URL</p></div>
+      <div><label className={labelCls}>Number of Videos <span className="text-gray-400">(optional)</span></label><input type="number" min="0" value={form.video_count} onChange={setS("video_count")} placeholder="e.g. 12" className={inputCls} /></div>
+      <div><label className={labelCls}>Description <span className="text-gray-400">(optional)</span></label><textarea rows={2} value={form.description} onChange={setS("description")} placeholder="Brief description" className={`${inputCls} resize-none`} /></div>
+      {form.playlist_url && getPlaylistId(form.playlist_url).length > 10 && (
+        <div className="md:col-span-2"><p className="text-xs text-gray-500 mb-1">Playlist preview:</p><div className="aspect-video w-full max-w-sm rounded-lg overflow-hidden"><iframe width="100%" height="100%" src={`https://www.youtube.com/embed/videoseries?list=${getPlaylistId(form.playlist_url)}`} title="preview" allowFullScreen className="w-full h-full" /></div></div>
+      )}
+    </div>
+  );
 }
 
 // ── Shared UI components ───────────────────────────────────────────────────
@@ -199,37 +243,6 @@ const AdminTeachings: React.FC = () => {
   const series = seriesData ?? [];
   const featuredCount = teachings.filter(t => t.is_featured).length;
 
-  const inputCls = "w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400";
-  const labelCls = "text-xs font-semibold text-gray-600 mb-1 block";
-
-  const TeachingFormFields = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div><label className={labelCls}>Title *</label><input type="text" required value={teachingForm.title} onChange={setT("title")} placeholder="e.g. Take the shield of faith" className={inputCls} /></div>
-      <div><label className={labelCls}>Speaker *</label><input type="text" required value={teachingForm.speaker} onChange={setT("speaker")} placeholder="e.g. Apostle Bisrat Bezuayene" className={inputCls} /></div>
-      <div><label className={labelCls}>YouTube URL *</label><input type="text" required value={teachingForm.youtube_url} onChange={setT("youtube_url")} placeholder="https://www.youtube.com/watch?v=..." className={inputCls} /></div>
-      <div><label className={labelCls}>Category *</label><select required value={teachingForm.category} onChange={setT("category")} className={inputCls}>{CATEGORIES.map(c => <option key={c}>{c}</option>)}</select></div>
-      <div className="md:col-span-2"><label className={labelCls}>Thumbnail URL <span className="text-gray-400">(optional)</span></label><input type="text" value={teachingForm.thumbnail_url} onChange={setT("thumbnail_url")} placeholder="Leave blank to use YouTube thumbnail" className={inputCls} /></div>
-      {teachingForm.youtube_url && (
-        <div className="md:col-span-2">
-          <p className="text-xs text-gray-500 mb-1">Thumbnail preview:</p>
-          <img src={`https://img.youtube.com/vi/${getYoutubeId(teachingForm.youtube_url)}/maxresdefault.jpg`} alt="preview" className="h-24 rounded-lg object-cover" onError={e => { (e.target as HTMLImageElement).style.display = "none"; }} />
-        </div>
-      )}
-    </div>
-  );
-
-  const SeriesFormFields = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="md:col-span-2"><label className={labelCls}>Series Title *</label><input type="text" required value={seriesForm.title} onChange={setS("title")} placeholder="e.g. Spirit of faith / የእምነት መንፈስ" className={inputCls} /></div>
-      <div className="md:col-span-2"><label className={labelCls}>YouTube Playlist URL *</label><input type="text" required value={seriesForm.playlist_url} onChange={setS("playlist_url")} placeholder="https://www.youtube.com/playlist?list=PL..." className={inputCls} /><p className="text-xs text-gray-400 mt-1">Paste the full YouTube playlist URL</p></div>
-      <div><label className={labelCls}>Number of Videos <span className="text-gray-400">(optional)</span></label><input type="number" min="0" value={seriesForm.video_count} onChange={setS("video_count")} placeholder="e.g. 12" className={inputCls} /></div>
-      <div><label className={labelCls}>Description <span className="text-gray-400">(optional)</span></label><textarea rows={2} value={seriesForm.description} onChange={setS("description")} placeholder="Brief description" className={`${inputCls} resize-none`} /></div>
-      {seriesForm.playlist_url && getPlaylistId(seriesForm.playlist_url).length > 10 && (
-        <div className="md:col-span-2"><p className="text-xs text-gray-500 mb-1">Playlist preview:</p><div className="aspect-video w-full max-w-sm rounded-lg overflow-hidden"><iframe width="100%" height="100%" src={`https://www.youtube.com/embed/videoseries?list=${getPlaylistId(seriesForm.playlist_url)}`} title="preview" allowFullScreen className="w-full h-full" /></div></div>
-      )}
-    </div>
-  );
-
   return (
     <div className="p-6 max-w-5xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Teachings</h1>
@@ -257,7 +270,7 @@ const AdminTeachings: React.FC = () => {
           {showTeachingForm && !editingTeaching && (
             <form onSubmit={handleAddTeaching} className="bg-white rounded-xl shadow p-6 space-y-4">
               <h2 className="text-base font-semibold text-gray-800 border-b pb-2">New Teaching</h2>
-              <TeachingFormFields />
+              <TeachingFormFields form={teachingForm} setT={setT} />
               {addTeachingMutation.isError && <p className="text-sm text-red-600">Failed to add teaching. Check the YouTube URL.</p>}
               <button type="submit" disabled={addTeachingMutation.isPending} className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg transition-colors">
                 {addTeachingMutation.isPending ? "Saving..." : "Add Teaching"}
@@ -274,7 +287,7 @@ const AdminTeachings: React.FC = () => {
                   <button onClick={() => setEditingTeaching(null)} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5" /></button>
                 </div>
                 <form onSubmit={handleUpdateTeaching} className="space-y-4">
-                  <TeachingFormFields />
+                  <TeachingFormFields form={teachingForm} setT={setT} />
                   {updateTeachingMutation.isError && <p className="text-sm text-red-600">Failed to update. Try again.</p>}
                   <div className="flex gap-3">
                     <button type="button" onClick={() => setEditingTeaching(null)} className="flex-1 border border-gray-300 text-gray-700 font-semibold py-2.5 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
@@ -345,7 +358,7 @@ const AdminTeachings: React.FC = () => {
           {showSeriesForm && !editingSeries && (
             <form onSubmit={handleAddSeries} className="bg-white rounded-xl shadow p-6 space-y-4">
               <h2 className="text-base font-semibold text-gray-800 border-b pb-2">New Teaching Series</h2>
-              <SeriesFormFields />
+              <SeriesFormFields form={seriesForm} setS={setS} />
               {addSeriesMutation.isError && <p className="text-sm text-red-600">Failed to add series. Check the playlist URL.</p>}
               <button type="submit" disabled={addSeriesMutation.isPending} className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg transition-colors">
                 {addSeriesMutation.isPending ? "Saving..." : "Add Series"}
@@ -361,7 +374,7 @@ const AdminTeachings: React.FC = () => {
                   <button onClick={() => setEditingSeries(null)} className="text-gray-400 hover:text-gray-600"><X className="w-5 h-5" /></button>
                 </div>
                 <form onSubmit={handleUpdateSeries} className="space-y-4">
-                  <SeriesFormFields />
+                  <SeriesFormFields form={seriesForm} setS={setS} />
                   {updateSeriesMutation.isError && <p className="text-sm text-red-600">Failed to update. Try again.</p>}
                   <div className="flex gap-3">
                     <button type="button" onClick={() => setEditingSeries(null)} className="flex-1 border border-gray-300 text-gray-700 font-semibold py-2.5 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
