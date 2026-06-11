@@ -32,7 +32,7 @@ const allServices = [
     num: 4, 
     day: "Tuesday", 
     title: "Teaching Service", 
-    time: "Evening: 04:00PM - 08:00PM",
+    time: "Evening: 05:30PM - 08:00PM",
     description: "Dive deeper into God's Word with verse-by-verse study and practical application for daily living.",
     location: "Riche Compound"
   },
@@ -40,7 +40,7 @@ const allServices = [
     num: 5, 
     day: "Wednesday", 
     title: "Healing & Deliverance", 
-    time: "Evening: 04:00PM - 08:00PM",
+    time: "Evening: 04:00PM - 07:30PM",
     description: "Experience God's healing power through prayer, worship, and ministry.",
     location: "Riche Compound"
   },

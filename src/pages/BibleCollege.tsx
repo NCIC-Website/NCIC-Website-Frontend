@@ -384,6 +384,9 @@ export default function BibleCollege() {
                 <p>
                   We invite you to join us in this journey of learning, transformation, and calling.
                 </p>
+                <p className="font-['Outfit'] font-semibold text-purple-900">
+                    Apostle Bisrat Bezuayene
+                </p>
               </div>
             </div>
           </div>
@@ -400,19 +403,22 @@ export default function BibleCollege() {
             {/* Message on the left */}
             <div>
               <h3 className="font-['Outfit'] font-bold text-2xl text-purple-900 mb-6">
-                Dean
+                Dean, Applied Bible College (ABC) 
               </h3>
               <div className="space-y-4 text-gray-700 font-['Outfit'] text-lg leading-relaxed">
                 <p>
-                  At Applied Bible College, our goal is not only academic excellence but also spiritual growth.
+                  Applied Bible College exists to equip and empower believers with a strong foundation in God's Word, preparing them for effective ministry, leadership, and Christian service. We are committed to raising disciples who live by biblical truth, influence society through righteousness, and advance the Kingdom of God.
                 </p>
                 <p>
-                  We believe that understanding the Word of God deeply empowers believers to live victorious 
-                  Christian lives and serve effectively in ministry.
+                  Through quality biblical education, spiritual formation, and practical ministry training, we prepare men and women to fulfill God's calling and faithfully serve wherever He leads them.
                 </p>
                 <p>
-                  We are committed to equipping students with knowledge, wisdom, and practical ministry experience.
+                  We are honored to be part of your journey as you grow in knowledge, character, and purpose. May your time at ABC be a season of transformation, preparation, and fruitful service for the glory of God.
                 </p>
+                <p className="font-['Outfit'] font-semibold text-purple-900">
+                    Dr. Gelila Zegeye, PhD
+                </p>
+              
               </div>
             </div>
             

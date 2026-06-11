@@ -27,11 +27,15 @@ export function Pastor() {
             
             <div className="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
               <p>
-                At New Creation International Church Ethiopia, we believe your best days are still out in front of you. Whether you are joining us in person or online, we invite you to experience our services and be a part of the New Creation family.
+                It is my joy to welcome you to our church family. I believe that God's Word has the power to transform lives, restore hope, and reveal His purpose for every person. No matter where you are in your journey, God has something wonderful prepared for you.
               </p>
               
               <p>
-                The Bible says when you are planted in the house of the Lord, you will flourish. Get ready to step into a new level of your destiny!
+                I invite you to join us in our worship services and experience the life-changing presence of God. As you grow in faith and encounter His truth, I believe your life will be transformed in a powerful way.              
+              </p>
+
+              <p>
+                We look forward to worshiping with you and seeing all that God will do in your life.              
               </p>
             </div>
 

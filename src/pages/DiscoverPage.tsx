@@ -336,7 +336,7 @@ export default function DiscoverPage() {
                   <Users className="w-8 h-8 text-[#6D28D9]" />
                 </div>
                 <h3 className="font-['Outfit'] font-bold text-5xl text-[#6D28D9] mb-2">
-                  10+
+                  12+
                 </h3>
                 <p className="font-['Outfit'] text-xl font-semibold text-gray-900 mb-2">
                   Years of Ministry

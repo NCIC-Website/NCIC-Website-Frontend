@@ -65,11 +65,11 @@ export function Welcome() {
             </h2>
             
             <p className="font-['Outfit'] text-base md:text-lg text-gray-700 leading-relaxed">
-              We are thrilled to have you here! New Creation International Church Ethiopia is a community of believers passionate about experiencing God's presence and living out His purpose. Whether you're visiting for the first time or looking for a church home, we welcome you with open arms.
+              We are delighted to have you here! Whether you are visiting for the first time, desiring to grow your faith, or searching for a church family, you are welcome here. Our desire is to create a place where people can encounter God, build meaningful relationships, and grow spiritually.
             </p>
 
             <p className="font-['Outfit'] text-base md:text-lg text-gray-700 leading-relaxed">
-              Join us as we grow in faith, worship together, and make a difference in our community. You belong here, and we can't wait to meet you!
+              Join us as we worship together, study God's Word, and impact our community with the love of Christ. We believe that your life can be transformed through a personal relationship with Jesus, and we look forward to being part of your journey.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4">

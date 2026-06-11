@@ -37,9 +37,7 @@ export function Discover() {
                 Ministries
               </h2>
               <p className="w-full text-[#bdbdbd] text-sm md:text-base leading-relaxed">
-                We are committed to spreading the Gospel and transforming lives through faith, service, and community 
-                engagement. faith, service, and  community engagement. We are committed to spreading the Gospel and transforming lives through faith, service, and community 
-                engagement. faith, service, and  community engagement.
+                We believe that every believer is called and equipped for ministry. Our ministries are designed to help individuals discover their God-given gifts, grow spiritually, serve others effectively, and fulfill the Great Commission of our Lord Jesus Christ. Through discipleship, service, fellowship, and outreach, we empower believers to become active participants in God's Kingdom.
               </p>
             </div>
 
@@ -48,9 +46,7 @@ export function Discover() {
                 Our Vision
               </h2>
               <p className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed">
-                To build a Christ-centered community where every believer grows in grace,
-                truth, and spiritual maturity. To build a Christ-centered community where every believer grows in grace,
-                truth, and spiritual maturity. To build a Christ-centered community where every believer grows in grace,
+                Raising a generation who know themselves in Christ and who make an impact through righteousness and are doers of the Word.
               </p>
             </div>
           </div>
@@ -61,10 +57,15 @@ export function Discover() {
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-['Outfit'] font-bold text-[#ffffff] mb-2">
                 Our Values
               </h2>
-              <p className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed">
-                Love, integrity, and faith guide everything we do in ministry and life. Love, integrity, and faith guide everything we do in ministry and life.
-                Love, integrity, and faith guide everything we do in ministry and life. Love, integrity, and faith guide everything we do in ministry and life.
-              </p>
+              <ul className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed space-y-1">
+                <li><span className="text-white font-semibold">Fear of God</span> – Honoring God in all that we do and living according to His Word.</li>
+                <li><span className="text-white font-semibold">Walking in Love</span> – Demonstrating Christ's love through compassion, unity, forgiveness, and service to others.</li>
+                <li><span className="text-white font-semibold">Excellence</span> – Pursuing the highest standards in our character, ministry, and stewardship as an act of worship to God.</li>
+                <li><span className="text-white font-semibold">Integrity</span> – Living with honesty, transparency, and faithfulness before God and people.</li>
+                <li><span className="text-white font-semibold">Faith</span> – Trusting God's promises and depending on His power in every area of life.</li>
+                <li><span className="text-white font-semibold">Discipleship</span> – Growing in Christ and helping others mature in their faith.</li>
+                <li><span className="text-white font-semibold">Servanthood</span> – Following the example of Jesus by humbly serving God and others.</li>
+              </ul>
             </div>
 
             <div>
@@ -72,9 +73,7 @@ export function Discover() {
                 Our Purpose
               </h2>
               <p className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed">
-                To glorify God through service, teaching, and empowering believers to live out
-                their divine calling. To glorify God through service, teaching, and empowering believers to live out
-                their divine calling. their divine calling. To glorify God through service, teaching, and empowering believers to
+                Our purpose is to glorify God by leading people into a life-transforming relationship with Jesus Christ. We exist to worship God, make disciples, equip believers, strengthen families, and impact our communities with the love, truth, and power of the Gospel.
               </p>
             </div>
           </div>

@@ -64,8 +64,8 @@ export function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 w-full lg:w-2/3">
             {[
               { num: 1, day: "Sunday", title: "Sunday Service", time: "Morning: 10:00AM - 1:00PM" },
-              { num: 2, day: "Tuesday", title: "Teaching Service", time: "Evening: 04:00PM - 08:00PM" },
-              { num: 3, day: "Wednesday", title: "Healing & Deliverance", time: "Evening: 04:00PM - 08:00PM" },
+              { num: 2, day: "Tuesday", title: "Teaching Service", time: "Evening: 05:30PM - 08:00PM" },
+              { num: 3, day: "Wednesday", title: "Healing & Deliverance", time: "Evening: 04:00PM - 07:30PM" },
               { num: 4, day: "Saturday", title: "Youth Service", time: "Afternoon: 02:00PM - 04:00PM" }
             ].map((service) => (
               <div

@@ -138,7 +138,7 @@ export function Contact() {
                     Email
                   </h4>
                   <p className="text-text-soft">
-                    info@ncic.org
+                    ncichurchet@gmail.com
                   </p>
                   <p className="text-sm text-muted-foreground mt-1">
                     We respond within 24 hours
@@ -160,7 +160,6 @@ export function Contact() {
                   </h4>
                   <div className="text-text-soft space-y-1">
                     <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p>Saturday: 10:00 AM - 2:00 PM</p>
                     <p>Sunday: Closed (See you in service!)</p>
                   </div>
                 </div>
