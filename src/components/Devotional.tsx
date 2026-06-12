@@ -100,47 +100,48 @@ export function Devotional() {
         {data && !isLoading && (
           <Card className="bg-white shadow-xl border-0 overflow-hidden">
             {/* Header bar with language toggle, title, share/download */}
-            <div className="bg-gradient-to-r from-purple-600 to-purple-800 px-6 py-6 flex items-center justify-between gap-4">
-              {/* Language Toggle */}
-              <div className="inline-flex rounded-lg border-2 border-white overflow-hidden shadow-sm">
-                <button
-                  onClick={() => setLanguage('en')}
-                  className={`px-4 py-1.5 font-outfit font-semibold text-sm transition-all duration-300 ${
-                    language === 'en' ? 'bg-white text-purple-600' : 'bg-transparent text-white hover:bg-white/10'
-                  }`}
-                >
-                  ENG
-                </button>
-                <button
-                  onClick={() => setLanguage('am')}
-                  className={`px-4 py-1.5 font-outfit font-semibold text-sm transition-all duration-300 ${
-                    language === 'am' ? 'bg-white text-purple-600' : 'bg-transparent text-white hover:bg-white/10'
-                  }`}
-                >
-                  አማ
-                </button>
-              </div>
-
-              {/* Title */}
-              <h3 className="font-outfit font-bold text-2xl md:text-3xl text-white text-center flex-1">
+            <div className="bg-gradient-to-r from-purple-600 to-purple-800 px-4 py-4 flex flex-col gap-3">
+              {/* Title — full width on all screens */}
+              <h3 className="font-outfit font-bold text-lg sm:text-2xl md:text-3xl text-white text-center">
                 {title}
               </h3>
-
-              {/* Share & Download */}
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setShowShareModal(true)}
-                  className="p-2 rounded-lg border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300 shadow-sm"
-                  aria-label="Share Devotional"
-                >
-                  <Share2 className="w-5 h-5" />
-                </button>
-                <button
-                  className="p-2 rounded-lg border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300 shadow-sm"
-                  aria-label="Download Devotional"
-                >
-                  <Download className="w-5 h-5" />
-                </button>
+              {/* Controls row: toggle left, share right */}
+              <div className="flex items-center justify-between gap-2">
+                {/* Language Toggle */}
+                <div className="inline-flex rounded-lg border-2 border-white overflow-hidden shadow-sm flex-shrink-0">
+                  <button
+                    onClick={() => setLanguage('en')}
+                    className={`px-3 py-1.5 font-outfit font-semibold text-xs sm:text-sm transition-all duration-300 ${
+                      language === 'en' ? 'bg-white text-purple-600' : 'bg-transparent text-white hover:bg-white/10'
+                    }`}
+                  >
+                    ENG
+                  </button>
+                  <button
+                    onClick={() => setLanguage('am')}
+                    className={`px-3 py-1.5 font-outfit font-semibold text-xs sm:text-sm transition-all duration-300 ${
+                      language === 'am' ? 'bg-white text-purple-600' : 'bg-transparent text-white hover:bg-white/10'
+                    }`}
+                  >
+                    አማ
+                  </button>
+                </div>
+                {/* Share & Download */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setShowShareModal(true)}
+                    className="p-2 rounded-lg border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300 shadow-sm"
+                    aria-label="Share Devotional"
+                  >
+                    <Share2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                  <button
+                    className="p-2 rounded-lg border-2 border-white text-white hover:bg-white hover:text-purple-600 transition-all duration-300 shadow-sm"
+                    aria-label="Download Devotional"
+                  >
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </div>
               </div>
             </div>
 

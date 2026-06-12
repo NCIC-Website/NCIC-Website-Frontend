@@ -131,11 +131,6 @@ export default function ServicesPage() {
                   <p className="font-['Outfit'] text-sm text-gray-700">
                     <span className="font-semibold">Location:</span> {service.location}
                   </p>
-                  {service.note && (
-                    <p className="font-['Outfit'] text-xs text-[#6D28D9] italic">
-                      {service.note}
-                    </p>
-                  )}
                 </div>
 
                 <button className="w-full mt-4 font-['Outfit'] text-sm text-[#0076C0] border-2 border-[#0076C0] rounded-lg px-6 py-2 hover:bg-[#0076C0] hover:text-white transition-all duration-300">
