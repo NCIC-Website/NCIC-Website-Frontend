@@ -8,6 +8,9 @@ deployment:
     # Copy source files (exclude node_modules, .git, and build artifacts)
     - rsync -av --exclude='node_modules' --exclude='.git' --exclude='dist' --exclude='build' --exclude='*.log' . $DEPLOYPATH/
     - cd $DEPLOYPATH
+    # Use Node.js 18 (check available versions with: ls /opt/alt/)
+    - export PATH=/opt/alt/alt-nodejs18/root/usr/bin:$PATH
+    - node --version
     # Install Node.js dependencies
     - npm install
     # Build the React application for production
@@ -15,6 +18,6 @@ deployment:
     # Move built files to web root
     - /bin/cp -r dist/* . 2>/dev/null || /bin/cp -r build/* . 2>/dev/null || echo "Build directory not found"
     # Clean up source files and node_modules to save space
-    - rm -rf src/ public/ node_modules/
+    - rm -rf src/ public/ node_modules/ package.json package-lock.json
     # Keep only essential files for production
     - find . -name "*.ts" -o -name "*.tsx" -o -name "*.jsx" | head -10 | xargs rm -f 2>/dev/null || true
