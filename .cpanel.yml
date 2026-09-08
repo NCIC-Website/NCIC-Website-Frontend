@@ -13,8 +13,12 @@ deployment:
     - node --version
     # Install Node.js dependencies
     - npm install
-    # Build the React application for production
-    - npm run build
+    # Install cross-env for environment variables
+    - npm install cross-env --save-dev
+    # Increase Node.js memory limit and build with optimizations
+    - export NODE_OPTIONS="--max-old-space-size=2048"
+    # Try different build strategies in order of preference
+    - npm run build:light || npm run build:dev || npm run build -- --minify=false --sourcemap=false
     # Move built files to web root
     - /bin/cp -r dist/* . 2>/dev/null || /bin/cp -r build/* . 2>/dev/null || echo "Build directory not found"
     # Clean up source files and node_modules to save space

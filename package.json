@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:light": "cross-env NODE_OPTIONS=--max-old-space-size=2048 vite build --minify=false",
+    "build:production": "cross-env NODE_OPTIONS=--max-old-space-size=3072 vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "react-scripts start"
