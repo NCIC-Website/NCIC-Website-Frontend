@@ -1,0 +1,14 @@
+---
+deployment:
+  tasks:
+    # Set deployment path
+    - export DEPLOYPATH=/home/newcreb/public_html
+    # Create deployment directory if it doesn't exist
+    - mkdir -p $DEPLOYPATH
+    # Copy only essential files (no build process - expect pre-built dist)
+    - /bin/cp -r dist/* $DEPLOYPATH/ 2>/dev/null || echo "No dist folder found - build locally first"
+    # Copy static files if dist doesn't exist
+    - /bin/cp -r index.html favicon.png robots.txt $DEPLOYPATH/ 2>/dev/null || true
+    # Set proper file permissions
+    - chmod -R 755 $DEPLOYPATH/
+    - echo "Static files deployed successfully"
