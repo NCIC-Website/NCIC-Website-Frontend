@@ -51,6 +51,8 @@ function QuickLink({ label, description, href, icon: Icon }: {
 }
 
 const Dashboard: React.FC = () => {
+  const BASE = "/ncic-admin-panel1";
+  
   const { data: devotionalsData } = useQuery({
     queryKey: ["dashboard-devotionals"],
     queryFn: async () => { const r = await api.get("/devotional"); return r.data; },
@@ -128,17 +130,17 @@ const Dashboard: React.FC = () => {
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 flex flex-wrap gap-3 items-center">
           <span className="text-sm font-semibold text-amber-800">Needs attention:</span>
           {unreadMessages > 0 && (
-            <Link to="/admin/messages" className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
+            <Link to={`${BASE}/messages`} className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
               <MessageSquare className="w-3.5 h-3.5" /> {unreadMessages} unread message{unreadMessages !== 1 ? "s" : ""}
             </Link>
           )}
           {pendingApps > 0 && (
-            <Link to="/admin/applications" className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
+            <Link to={`${BASE}/applications`} className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
               <GraduationCap className="w-3.5 h-3.5" /> {pendingApps} pending application{pendingApps !== 1 ? "s" : ""}
             </Link>
           )}
           {pendingWritten > 0 && (
-            <Link to="/admin/testimonies" className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
+            <Link to={`${BASE}/testimonies`} className="flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-amber-200 transition-colors">
               <FileText className="w-3.5 h-3.5" /> {pendingWritten} testimony{pendingWritten !== 1 ? "ies" : ""} awaiting approval
             </Link>
           )}
@@ -148,31 +150,31 @@ const Dashboard: React.FC = () => {
       {/* Stats grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         <StatCard label="Devotionals" value={devotionals.length} icon={BookOpen} color="border-purple-600"
-          href="/admin/devotionals" sub={`${publishedDevotionals} published · ${draftDevotionals} drafts`} />
+          href={`${BASE}/devotionals`} sub={`${publishedDevotionals} published · ${draftDevotionals} drafts`} />
         <StatCard label="Teachings" value={teachings.length} icon={Video} color="border-blue-600"
-          href="/admin/teachings" sub={`${publishedTeachings} published`} />
+          href={`${BASE}/teachings`} sub={`${publishedTeachings} published`} />
         <StatCard label="Video Testimonies" value={videoTestimonies.length} icon={Video} color="border-pink-600"
-          href="/admin/testimonies" sub={`${videoTestimonies.filter((t: any) => t.is_published).length} published`} />
+          href={`${BASE}/testimonies`} sub={`${videoTestimonies.filter((t: any) => t.is_published).length} published`} />
         <StatCard label="Written Testimonies" value={writtenTestimonies.length} icon={FileText} color="border-indigo-600"
-          href="/admin/testimonies" sub={pendingWritten > 0 ? `${pendingWritten} awaiting approval` : "All reviewed"} />
+          href={`${BASE}/testimonies`} sub={pendingWritten > 0 ? `${pendingWritten} awaiting approval` : "All reviewed"} />
         <StatCard label="Newsletter Subscribers" value={subscribers} icon={Mail} color="border-green-600"
-          href="/admin/newsletter" />
+          href={`${BASE}/newsletter`} />
         <StatCard label="Messages" value={totalMessages} icon={MessageSquare} color="border-orange-600"
-          href="/admin/messages" sub={unreadMessages > 0 ? `${unreadMessages} unread` : "All read"} />
+          href={`${BASE}/messages`} sub={unreadMessages > 0 ? `${unreadMessages} unread` : "All read"} />
         <StatCard label="Bible College Applications" value={totalApps} icon={GraduationCap} color="border-yellow-600"
-          href="/admin/applications" sub={pendingApps > 0 ? `${pendingApps} pending review` : "All reviewed"} />
+          href={`${BASE}/applications`} sub={pendingApps > 0 ? `${pendingApps} pending review` : "All reviewed"} />
         <StatCard label="Content Managers" value={managers} icon={Users} color="border-teal-600"
-          href="/admin/content-managers" />
+          href={`${BASE}/users`} />
       </div>
 
       {/* Quick actions */}
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-800 mb-3">Quick Actions</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <QuickLink label="Add Devotional" description="Create a new daily devotional" href="/admin/devotionals" icon={BookOpen} />
-          <QuickLink label="Add Teaching" description="Upload a new sermon or teaching" href="/admin/teachings" icon={Video} />
-          <QuickLink label="Review Applications" description="View Bible College applications" href="/admin/applications" icon={GraduationCap} />
-          <QuickLink label="Read Messages" description="Check contact form messages" href="/admin/messages" icon={MessageSquare} />
+          <QuickLink label="Add Devotional" description="Create a new daily devotional" href={`${BASE}/devotionals`} icon={BookOpen} />
+          <QuickLink label="Add Teaching" description="Upload a new sermon or teaching" href={`${BASE}/teachings`} icon={Video} />
+          <QuickLink label="Review Applications" description="View Bible College applications" href={`${BASE}/applications`} icon={GraduationCap} />
+          <QuickLink label="Read Messages" description="Check contact form messages" href={`${BASE}/messages`} icon={MessageSquare} />
         </div>
       </div>
 
@@ -182,7 +184,7 @@ const Dashboard: React.FC = () => {
         <div className="bg-white rounded-xl shadow p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-gray-800">Devotional Queue</h3>
-            <Link to="/admin/devotionals" className="text-xs text-purple-600 hover:underline font-semibold">View all</Link>
+            <Link to={`${BASE}/devotionals`} className="text-xs text-purple-600 hover:underline font-semibold">View all</Link>
           </div>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -223,7 +225,7 @@ const Dashboard: React.FC = () => {
         <div className="bg-white rounded-xl shadow p-5">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-gray-800">Bible College Applications</h3>
-            <Link to="/admin/applications" className="text-xs text-purple-600 hover:underline font-semibold">View all</Link>
+            <Link to={`${BASE}/applications`} className="text-xs text-purple-600 hover:underline font-semibold">View all</Link>
           </div>
           {totalApps === 0 ? (
             <p className="text-sm text-gray-400 py-4 text-center">No applications yet.</p>

@@ -1,0 +1,20 @@
+---
+deployment:
+  tasks:
+    # Set deployment path
+    - export DEPLOYPATH=/home/newcreb/public_html
+    # Create deployment directory if it doesn't exist
+    - mkdir -p $DEPLOYPATH
+    # Copy source files (exclude node_modules, .git, and build artifacts)
+    - rsync -av --exclude='node_modules' --exclude='.git' --exclude='dist' --exclude='build' --exclude='*.log' . $DEPLOYPATH/
+    - cd $DEPLOYPATH
+    # Install Node.js dependencies
+    - npm install
+    # Build the React application for production
+    - npm run build
+    # Move built files to web root
+    - /bin/cp -r dist/* . 2>/dev/null || /bin/cp -r build/* . 2>/dev/null || echo "Build directory not found"
+    # Clean up source files and node_modules to save space
+    - rm -rf src/ public/ node_modules/
+    # Keep only essential files for production
+    - find . -name "*.ts" -o -name "*.tsx" -o -name "*.jsx" | head -10 | xargs rm -f 2>/dev/null || true
