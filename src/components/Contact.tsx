@@ -119,6 +119,9 @@ export function Contact() {
                   <p className="text-text-soft">
                     (+251) 94050-0000
                   </p>
+                  <p className="text-text-soft">
+                    (+251) 94040-0000
+                  </p>
                   <p className="text-sm text-muted-foreground mt-1">
                     Available Monday - Friday, 9 AM - 5 PM
                   </p>

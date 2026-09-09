@@ -7,15 +7,12 @@ import { BookOpen, Sparkles, Heart, Users, GraduationCap, Droplet, X, Calendar, 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/home-hero-congregation.jpg";
-import congregationImage from "@/assets/hero-congregation.jpg";
-import pastorImage from "@/assets/pastor-couple.jpg";
-import apostleImage from "@/assets/Apostle.jpg";
-import christmasImage from "@/assets/christmas+5.jpg";
-import easterImage from "@/assets/easter.jpg";
-import newyearImage from "@/assets/newyear6.jpg";
 import anniversaryImage from "@/assets/anninversary6.jpg";
 import baptism2Image from "@/assets/baptizm2.jpg";
 import childrenBaptismImage from "@/assets/childrenbaptizm.jpg";
+import christmasImage from "@/assets/christmas+5.jpg";
+import easterImage from "@/assets/easter.jpg";
+import newyearImage from "@/assets/newyear6.jpg";
 
 export default function DiscoverPage() {
   const navigate = useNavigate();
@@ -185,52 +182,79 @@ export default function DiscoverPage() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#6D28D9] to-purple-600 mx-auto mb-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-            {/* Belief 1 */}
-            <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
-              <p className="font-['Outfit'] text-lg text-gray-700">
-                The Bible is the inspired Word of God
-              </p>
+          <div className="max-w-7xl mx-auto mb-12">
+            {/* First 8 beliefs in 2-column layout */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {/* Belief 1 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">1</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe that the Holy Bible was written under the guidance of the Spirit of God, possesses divine power, is completely without error, and holds full authority. <em className="text-gray-500">(2 Timothy 3:16-17; 2 Peter 1:21)</em>
+                </p>
+              </div>
+
+              {/* Belief 2 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">2</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe in one God, existing eternally in three persons: the Father, the Son, and the Holy Spirit. <em className="text-gray-500">(Genesis 1:26; John 1:1-2; Matthew 3:16-17)</em>
+                </p>
+              </div>
+
+              {/* Belief 3 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">3</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe in Jesus Christ, the Son of God, who was born of the Virgin Mary; lived among men in complete perfection without sin; revealed God's authority and power through His words and deeds; died on the cross; was raised from the dead on the third day; accomplished everything required for human salvation; and now sits at the right hand of the Father. <em className="text-gray-500">(Matthew 1:18-25; 1 Peter 2:22; Matthew 8:16-17; Matthew 28:6; Romans 1:3-4; Romans 10:8-13; Revelation 1:18)</em>
+                </p>
+              </div>
+
+              {/* Belief 4 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">4</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe that for a person to experience rebirth through the Holy Spirit, they must turn away from a life of sin, accept by faith the salvation work accomplished on the cross, confess the Lordship of Jesus Christ with their mouth, and believe in their heart that Jesus Christ died for their sins, was buried, and rose from the dead. <em className="text-gray-500">(Acts 3:19-20; Romans 10:8-13)</em>
+                </p>
+              </div>
+
+              {/* Belief 5 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">5</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe that the Holy Spirit continues the work He began on the Day of Pentecost, empowering believers today to live a godly life, bestowing the gifts of the Holy Spirit through the baptism in the Holy Spirit, setting apart those He has chosen for various ministries, and equipping them with power to continue all the works of Jesus Christ. <em className="text-gray-500">(Mark 16:17-18; Acts 2:38-39; Acts 13:2; Romans 12:6; Ephesians 4:4-11; Titus 2:11)</em>
+                </p>
+              </div>
+
+              {/* Belief 6 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">6</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe in the second coming of Jesus Christ, which will happen soon, when He will be revealed to take those who believe in Him. <em className="text-gray-500">(Revelation 22:20-21)</em>
+                </p>
+              </div>
+
+              {/* Belief 7 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">7</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe that those who believe in Christ will be resurrected from the dead in incorruptible bodies for a heavenly home, while those who do not believe will go away into eternal punishment prepared for the devil and his angels. <em className="text-gray-500">(Matthew 25:41; 1 Corinthians 15; 1 Thessalonians 4:13-18)</em>
+                </p>
+              </div>
+
+              {/* Belief 8 */}
+              <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">8</div>
+                <p className="font-['Outfit'] text-lg text-gray-700">
+                  We believe that the true Church, as the Body of Christ, transcends denominational and local church boundaries and encompasses all believers in Christ who are born again. <em className="text-gray-500">(John 3:16; 1 John 5:12)</em>
+                </p>
+              </div>
             </div>
 
-            {/* Belief 2 */}
+            {/* Belief 9 - Full width */}
             <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
+              <div className="w-8 h-8 bg-[#6D28D9] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">9</div>
               <p className="font-['Outfit'] text-lg text-gray-700">
-                Salvation comes through Jesus Christ alone
-              </p>
-            </div>
-
-            {/* Belief 3 */}
-            <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
-              <p className="font-['Outfit'] text-lg text-gray-700">
-                The Holy Spirit empowers believers
-              </p>
-            </div>
-
-            {/* Belief 4 */}
-            <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
-              <p className="font-['Outfit'] text-lg text-gray-700">
-                The Church is the body of Christ
-              </p>
-            </div>
-
-            {/* Belief 5 */}
-            <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
-              <p className="font-['Outfit'] text-lg text-gray-700">
-                Baptism and communion are sacred practices
-              </p>
-            </div>
-
-            {/* Belief 6 */}
-            <div className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-2 h-2 bg-[#6D28D9] rounded-full mt-2 flex-shrink-0"></div>
-              <p className="font-['Outfit'] text-lg text-gray-700">
-                We believe in the power of prayer and worship
+                We believe that holy angels were created by God, possess limited abilities, are ministering spirits, worship God, and are sent by God to assist human beings. <em className="text-gray-500">(Hebrews 1; Revelation 22:9)</em>
               </p>
             </div>
           </div>
@@ -419,8 +443,6 @@ export default function DiscoverPage() {
                 </CardContent>
               </Card>
             </div>
-
-            
           </div>
         </div>
       </div>
@@ -582,154 +604,6 @@ export default function DiscoverPage() {
           </div>
         </div>
       </div>
-
-      {/* Foundation Class Enrollment Form Modal */}
-      {showFoundationForm && (
-        <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-start justify-center p-4 overflow-y-auto"
-          onClick={() => setShowFoundationForm(false)}
-        >
-          <div 
-            className="relative w-full max-w-2xl bg-white rounded-lg my-8"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowFoundationForm(false)}
-              className="absolute top-4 right-4 z-10 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full p-2 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            
-            <div className="p-8">
-              <h2 className="font-['Outfit'] font-bold text-3xl text-gray-900 mb-2">
-                Enroll in Foundation Class
-              </h2>
-              <p className="font-['Outfit'] text-gray-600 mb-6">
-                Fill out this form to express your interest in joining our Foundation Classes
-              </p>
-
-              <form onSubmit={handleFormSubmit} className="space-y-6">
-                <div>
-                  <label className="font-['Outfit'] font-semibold text-gray-700 block mb-2">
-                    Full Name *
-                  </label>
-                  <Input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleFormChange}
-                    required
-                    className="font-['Outfit']"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label className="font-['Outfit'] font-semibold text-gray-700 block mb-2">
-                    Phone Number *
-                  </label>
-                  <Input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleFormChange}
-                    required
-                    className="font-['Outfit']"
-                    placeholder="+251912345678"
-                  />
-                </div>
-
-                <div>
-                  <label className="font-['Outfit'] font-semibold text-gray-700 block mb-2">
-                    Email Address
-                  </label>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    className="font-['Outfit']"
-                    placeholder="your.email@example.com (optional)"
-                  />
-                </div>
-
-                <div>
-                  <label className="font-['Outfit'] font-semibold text-gray-700 block mb-2">
-                    Address *
-                  </label>
-                  <Input
-                    type="text"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleFormChange}
-                    required
-                    className="font-['Outfit']"
-                    placeholder="City, Region"
-                  />
-                </div>
-
-                <div className="flex gap-4">
-                  <Button
-                    type="submit"
-                    className="flex-1 bg-[#6D28D9] hover:bg-[#5a21b6] text-white font-['Outfit'] font-semibold py-3"
-                  >
-                    Submit Enrollment
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={() => setShowFoundationForm(false)}
-                    className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-['Outfit'] font-semibold py-3"
-                  >
-                    Cancel
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Success Message Modal */}
-      {showSuccessMessage && (
-        <div 
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setShowSuccessMessage(false)}
-        >
-          <div 
-            className="relative w-full max-w-md bg-white rounded-lg p-8 text-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowSuccessMessage(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            
-            <h3 className="font-['Outfit'] font-bold text-2xl text-gray-900 mb-4">
-              Enrollment Submitted!
-            </h3>
-            <p className="font-['Outfit'] text-lg text-gray-700 mb-2">
-              Join us this Sunday!
-            </p>
-            <p className="font-['Outfit'] text-gray-600 mb-6">
-              Our church staff will call you with more details about the Foundation Classes.
-            </p>
-            <Button
-              onClick={() => setShowSuccessMessage(false)}
-              className="bg-[#6D28D9] hover:bg-[#5a21b6] text-white font-['Outfit'] font-semibold px-8 py-3"
-            >
-              Close
-            </Button>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

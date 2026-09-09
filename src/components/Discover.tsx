@@ -34,18 +34,9 @@ export function Discover() {
           <div className="flex flex-col gap-6 md:gap-10 w-full lg:w-1/2 text-left">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-['Outfit'] font-bold text-[#ffffff] mb-2">
-                Ministries
-              </h2>
-              <p className="w-full text-[#bdbdbd] text-sm md:text-base leading-relaxed">
-                We believe that every believer is called and equipped for ministry. Our ministries are designed to help individuals discover their God-given gifts, grow spiritually, serve others effectively, and fulfill the Great Commission of our Lord Jesus Christ. Through discipleship, service, fellowship, and outreach, we empower believers to become active participants in God's Kingdom.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-['Outfit'] font-bold text-[#ffffff] mb-2">
                 Our Vision
               </h2>
-              <p className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed">
+              <p className="w-full text-[#bdbdbd] text-sm md:text-base leading-relaxed">
                 Raising a generation who know themselves in Christ and who make an impact through righteousness and are doers of the Word.
               </p>
             </div>
@@ -55,26 +46,13 @@ export function Discover() {
           <div className="flex flex-col gap-6 md:gap-10 w-full lg:w-1/2 text-left">
             <div>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-['Outfit'] font-bold text-[#ffffff] mb-2">
-                Our Values
+                Our Mission
               </h2>
-              <ul className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed space-y-1">
-                <li><span className="text-white font-semibold">Fear of God</span> – Honoring God in all that we do and living according to His Word.</li>
-                <li><span className="text-white font-semibold">Walking in Love</span> – Demonstrating Christ's love through compassion, unity, forgiveness, and service to others.</li>
-                <li><span className="text-white font-semibold">Excellence</span> – Pursuing the highest standards in our character, ministry, and stewardship as an act of worship to God.</li>
-                <li><span className="text-white font-semibold">Integrity</span> – Living with honesty, transparency, and faithfulness before God and people.</li>
-                <li><span className="text-white font-semibold">Faith</span> – Trusting God's promises and depending on His power in every area of life.</li>
-                <li><span className="text-white font-semibold">Discipleship</span> – Growing in Christ and helping others mature in their faith.</li>
-                <li><span className="text-white font-semibold">Servanthood</span> – Following the example of Jesus by humbly serving God and others.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-['Outfit'] font-bold text-[#ffffff] mb-2">
-                Our Purpose
-              </h2>
-              <p className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed">
-                Our purpose is to glorify God by leading people into a life-transforming relationship with Jesus Christ. We exist to worship God, make disciples, equip believers, strengthen families, and impact our communities with the love, truth, and power of the Gospel.
-              </p>
+              <div className="w-full text-[#d2d2d2] text-sm md:text-base leading-relaxed space-y-3">
+                <p><span className="text-white font-semibold">1.</span> To preach the gospel of the grace of Jesus Christ so that people may be born again and rooted and established under New Covenant principles, by planting and teaching churches everywhere.</p>
+                <p><span className="text-white font-semibold">2.</span> To equip believers with the competence to understand and know the finished work of Jesus Christ on the cross in order to teach and help others, training them through structured group training programs from basic Christian faith doctrines to a level where they become qualified for ministry.</p>
+                <p><span className="text-white font-semibold">3.</span> To bring people to Christ using media and various technological innovations, and to enable believers to become rooted in New Creation realities so that they can benefit others.</p>
+              </div>
             </div>
           </div>
         </section>
